@@ -1,25 +1,26 @@
 
-Who?
+#Who?
 If you run away screaming when someone say "Erlang cluster", then you should
 wait for the final release.
 
-Why?
+#Why?
 You want to take CouchDB2.0 for a ride and play(keyword!) production.
 As dev/run starts 3 nodes on one server and that is not how you usually do it in
 production, you need something else than developer preview.
 
-How?
+#How?
 Some very minor hacking :)
 
-Requirements?
-NodeJS with npm (any version should work, I use the old 0.10.30)
-Rebar 2.3.1     (or newer)
-Erlang          (the later the better, I use 17.4)
-Iptables        (Expose the clusterports to the Internet and you are FUCKED!)
-git             (any version)
-Computers       (Yes, plural, we are building a cluster here!)
+#Requirements?
 
-**** Firewall ****
+* NodeJS with npm (any version should work, I use the old 0.10.30)
+* Rebar 2.3.1     (or newer)
+* Erlang          (the later the better, I use 17.4)
+* Iptables        (Expose the clusterports to the Internet and you are FUCKED!)
+* git             (any version)
+* Computers       (Yes, plural, we are building a cluster here!)
+
+## Firewall
 
 If you do not have a firewall between your servers, then you can skip this.
 
@@ -36,7 +37,7 @@ No, this needs to be fixed. Let us settle for the range TCP 9100-9200.
 Open up those ports in your firewalls and it is time to test it.
 
 You need 2 servers with working hostnames. I will call them server1 and server2.
-The . is to Erlang what ; is to C.
+The `.` is to Erlang what `;` is to C.
 
 Then on server1:
     erl -sname bus -setcookie 'brumbrum' -kernel inet_dist_listen_min 9100 -kernel inet_dist_listen_max 9200
@@ -53,7 +54,8 @@ If that returns true, then you have a erlang cluster, and the firewalls are
 open. If you get false or nothing at all, then you have a problem with the
 firewall.
 
----- First time in Erlang. Time to play! ----
+## First time in Erlang. Time to play!
+
 Run in both shells:
     register(shell, self()).
 
