@@ -5,10 +5,10 @@ Normally you start small and grow over time. In the beginning you might do just
 fine with one node, but as your data and number of clients grows, you need to
 scale out.
 
-For simplicity we wills start fresh and small.
+For simplicity we will start fresh and small.
 Turn off all the minions and wipe data to have a clean start.
 This will remove all databases, but you are not storing anything in them anyway,
-do you?
+are you?
 
 Start minion1 and add a database to it. To keep it simple we will have 2 shards
 and no replicas.
@@ -82,10 +82,10 @@ there. Let us look in it. Yes, you can get it with curl too:
 "by_node"      Which shards each node have.
 "by_rage"      On which nodes each shard is.
 
+**** Nothing here, nothing there, a shard in my sleeve ****
+
 Start minion2 and add it to the cluster. Check in /_membership that the minions
 talk with each other.
-
-**** Nothing here, nothing there, a shard in my sleeve ****
 
 If you look in data on minion2, you will see that there is no directory called
 shards.

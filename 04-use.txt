@@ -42,7 +42,7 @@ Having a to high value of n is adding servers and complexity without any real
 benefit.
 The sweetspot is at n=3. 
 
-Say that we have a database with 3 replicas and 4 shard. That would give us a
+Say that we have a database with 3 replicas and 4 shards. That would give us a
 maximum of 12 nodes. 4*3=12
 Every shard have 3 copies.
 
