@@ -12,24 +12,24 @@ do you?
 
 Start minion1 and add a database to it. To keep it simple we will have 2 shards
 and no replicas.
-	curl -X PUT "http://xxx.xxx.xxx.xxx:45984/small?n=1&q=2" --user daboss
+    curl -X PUT "http://xxx.xxx.xxx.xxx:45984/small?n=1&q=2" --user daboss
 
 If you look in data/shards you will find the 2 shards.
 
 data
-	shards
-		00000000-7fffffff
-			small.1425202577.couch
-		80000000-ffffffff
-			small.1425202577.couch
+    shards
+        00000000-7fffffff
+            small.1425202577.couch
+        80000000-ffffffff
+            small.1425202577.couch
 
 Now, go to the admin panel
-	http://xxx.xxx.xxx.xxx:45986/_utils
+    http://xxx.xxx.xxx.xxx:45986/_utils
 
 and look in the database _dbs, it is here that the metadata for each database
 is stored. As the database is called small, there is a document called small
 there. Let us look in it. Yes, you can get it with curl too:
-	curl -X GET "http://xxx.xxx.xxx.xxx:45986/_dbs/small"
+    curl -X GET "http://xxx.xxx.xxx.xxx:45986/_dbs/small"
 
 {
   "_id": "small",
@@ -75,12 +75,12 @@ there. Let us look in it. Yes, you can get it with curl too:
   }
 }
 
-"_id"			The name of the database.
-"_rev"			The current revision of the metadata.
-"shard_suffix"	The numbers after small and before .couch.
-"changelog"		Self explaining.
-"by_node"		Which shards each node have.
-"by_rage"		On which nodes each shard is.
+"_id"          The name of the database.
+"_rev"         The current revision of the metadata.
+"shard_suffix" The numbers after small and before .couch.
+"changelog"    Self explaining.
+"by_node"      Which shards each node have.
+"by_rage"      On which nodes each shard is.
 
 Start minion2 and add it to the cluster. Check in /_membership that the minions
 talk with each other.
@@ -168,7 +168,7 @@ around.
 We will stop on n=2 to keep things simple.
 Start minion number 3 and add it to the cluster.
 Then create the directories for the shard
-	mkdir -p data/shards/00000000-7fffffff
+    mkdir -p data/shards/00000000-7fffffff
 
 And copy over small.1425202577.couch that is in that directory.
 Do not move files between the shard directories as that will make CouchDB very

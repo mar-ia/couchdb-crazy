@@ -2,24 +2,24 @@
 **** Spawning time ****
 
 Time to make a minon!
-	cd ..
-	cp -r minion_skeleton minion1
-	cd minion1
-	mv start_minion.sh start_minion1.sh
+    cd ..
+    cp -r minion_skeleton minion1
+    cd minion1
+    mv start_minion.sh start_minion1.sh
 
 Open start_minion.sh and etc/local.ini and change all
-	minion_skeleton
+    minion_skeleton
 to
-	minion1
+    minion1
 
 In etc/local.ini change the uuid from "change_me_later" to an actual uuid. Ask
 a running couchdb /_uuids for one.
 And do not forget to change xxx.xxx.xxx.xxx to an ip.
 
 Open etc/vm.args and change
-	{{node_name}}
+    {{node_name}}
 to
-	-name minion1@xxx.xxx.xxx.xxx
+    -name minion1@xxx.xxx.xxx.xxx
 
 where xxx.xxx.xxx.xxx is the IP of the server you are going to run it on.
 
@@ -42,7 +42,7 @@ Run ./start_minionX.sh on every server to start the cluster.
 
 Go to http://server1:45984/_membership to see the name of the node and all the
 nodes it knows about and are connected too.
-	curl -X PUT "http://xxx.xxx.xxx.xxx:45984/_membership" --user daboss
+    curl -X PUT "http://xxx.xxx.xxx.xxx:45984/_membership" --user daboss
 
 {"all_nodes":["minion1@xxx.xxx.xxx.xxx"],"cluster_nodes":["minion1@xxx.xxx.xxx.xxx"]}
 
@@ -50,7 +50,7 @@ nodes it knows about and are connected too.
 "cluster_nodes" are the nodes that are connected to this node.
 
 Time to add a node:
-	curl -X PUT "http://xxx.xxx.xxx.xxx:45986/_nodes/minion2@yyy.yyy.yyy.yyy" -d {}
+    curl -X PUT "http://xxx.xxx.xxx.xxx:45986/_nodes/minion2@yyy.yyy.yyy.yyy" -d {}
 
 Now look at http://server1:45984/_membership again.
 
