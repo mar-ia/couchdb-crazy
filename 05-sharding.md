@@ -83,7 +83,7 @@ called small, there is a document called small there. Let us look in it. Yes, yo
 
 **Nothing here, nothing there, a shard in my sleeve **
 
-Start minion2 and add it to the cluster. Check in /_membership that the minions talk with each other.
+Start minion2 and add it to the cluster. Check in `/_membership` that the minions talk with each other.
 
 If you look in data on minion2, you will see that there is no directory called shards.
 
@@ -168,7 +168,7 @@ directories for the shard
 And copy over `small.1425202577.couch` that is in that directory. Do not move files between the shard directories 
 as that will make CouchDB very angry with you!
 
-Edit the database document in `_db`s again. Make it so that minion2 only have the shard `80000000-ffffffff`, and 
+Edit the database document in `_dbs` again. Make it so that minion2 only have the shard `80000000-ffffffff`, and
 minion3 only have shard `00000000-7fffffff`. Minion1 should not be touch this time.
 
 First *"add"* then *"remove"* or is it *"delete"*? Is there a *"move"*? The changelog is nothing that CouchDB cares about. 

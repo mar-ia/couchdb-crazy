@@ -36,11 +36,11 @@ We need a place to put the databases, data will do.
 We need to force CouchDB to use the ports we have opened in the firewall. If you do not have a firewall, you can skip 
 this step. Open rel/files/sys.config and make the lines 28-32 look like this:
 
-        ]},
-        {inet_dist_listen_min, 9100},
-        {inet_dist_listen_max, 9200}
-    ]}
-].
+            ]},
+            {inet_dist_listen_min, 9100},
+            {inet_dist_listen_max, 9200}
+        ]}
+    ].
 
 The configuration files are in rel/overlay/etc we copy them so we can get to them easier.
 
