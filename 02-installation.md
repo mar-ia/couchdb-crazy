@@ -19,10 +19,10 @@ And we have the latest master. We will leave this directory alone so we easy can
     cp -r couchdb minion_skeleton
     cd minion_skeleton
 
-This gives us a skeleton to have as the base for all our nodes. As the developer preview uses node1, node2 and node3, 
+This gives us a skeleton to have as the base for all our nodes. As the developer preview uses node1, node2 and node3,
 we will use minions instead to avoid conflict.
 
-For some reason boot_node.erl is not compiled during make, and is in dev. Let us move it to the root just for the 
+For some reason boot_node.erl is not compiled during make, and is in dev. Let us move it to the root just for the
 sake of it.
 
     cp dev/boot_node.erl .
@@ -33,7 +33,7 @@ We need a place to put the databases, data will do.
 
     mkdir data
 
-We need to force CouchDB to use the ports we have opened in the firewall. If you do not have a firewall, you can skip 
+We need to force CouchDB to use the ports we have opened in the firewall. If you do not have a firewall, you can skip
 this step. Open rel/files/sys.config and make the lines 28-32 look like this:
 
             ]},
@@ -49,19 +49,19 @@ The configuration files are in rel/overlay/etc we copy them so we can get to the
 Edit etc/vm.args to set the cookie for the cluster. Change
 
     -setcookie monster
-    
+
 to
 
     -setcookie eviloverlord
 
-So that we in no way are in conflict with the developer preview. 
+So that we in no way are in conflict with the developer preview.
 
 Open etc/local.ini and go to the bottom and under `[admin]` add an admin from
 your 1.6.1 install. No admin party here.
 
     daboss = -pbkdf2-2837642876498764294762cabab etc etc etc
 
-Now we are going to use local.ini to overwrite all `{{variable_name}}` in `default.ini`. We will use port 45984 and 
+Now we are going to use local.ini to overwrite all `{{variable_name}}` in `default.ini`. We will use port 45984 and
 45986 as they are not used by the developer preview.
 
     [vendor]

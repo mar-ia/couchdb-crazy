@@ -30,7 +30,7 @@ CouchDB2.0 uses the port 5984 just as 1.x.y, but is also uses 5986 for the admin
 Erlang uses TCP port 4369 (EPMD) to find nodes, so all servers must be able to speak to each other on this port.
 In an Erlang Cluster, all nodes are connected to all other nodes. A mesh.
 
-Every Erlang application then uses other ports for talking. Random ports! Yay \ö/ 
+Every Erlang application then uses other ports for talking. Random ports! Yay \ö/
 
 No, this needs to be fixed. Let us settle for the range TCP 9100-9200. Open up those ports in your firewalls and it is time to test it.
 
