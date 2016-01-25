@@ -61,8 +61,9 @@ your 1.6.1 install. No admin party here.
 
     daboss = -pbkdf2-2837642876498764294762cabab etc etc etc
 
-Now we are going to use local.ini to overwrite all `{{variable_name}}` in `default.ini`. We will use port 45984 and
-45986 as they are not used by the developer preview.
+Now we are going to use `local.ini` to overwrite all `{{variable_name}}` in `default.ini`. We will use port 45984 and
+45986 as they are not used by the developer preview. Remember that the uuid must be the same on all the nodes in a
+cluster.
 
     [vendor]
     name = The Apache Software Foundation
@@ -70,10 +71,11 @@ Now we are going to use local.ini to overwrite all `{{variable_name}}` in `defau
     [couchdb]
     database_dir = /home/username/couchdb2.0/minion_skeleton/data
     view_index_dir = /home/username/couchdb2.0/minion_skeleton/data
-    uuid = change_me_later
+    uuid = must_be_the_same_on_all_the_nodes
 
     [chttpd]
     port = 45984
+    bind_address = xxx.xxx.xxx.xxx
     docroot = /home/username/couchdb2.0/minion_skeleton/share/www
 
     [httpd]

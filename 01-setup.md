@@ -14,9 +14,9 @@ Some very minor hacking :)
 
 #Requirements?
 
-* NodeJS with npm (any version should work, I use the old 0.10.30)
-* Rebar 2.3.1     (or newer)
-* Erlang          (the later the better, I use 17.4)
+* NodeJS with npm (NodeJS v5 works, minimum v3)(For Fauxton)
+* Rebar 2.6.0     (or newer)
+* Erlang          (the later the better, I use 18.2.1)
 * Iptables        (Expose the clusterports to the Internet and you are FUCKED!)
 * git             (any version)
 * Computers       (Yes, plural, we are building a cluster here!)

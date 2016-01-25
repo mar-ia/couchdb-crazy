@@ -17,8 +17,7 @@ to
 
     minion1
 
-In `etc/local.ini` change the uuid from "change_me_later" to an actual uuid. Ask a running couchdb `/_uuids` for one.
-And do not forget to change `xxx.xxx.xxx.xxx` to an ip.
+In `etc/local.ini` change the `xxx.xxx.xxx.xxx` to the ip of the node.
 
 Open etc/vm.args and change
 
@@ -41,7 +40,8 @@ probably know how to deal with it :)
 
 ##Boot
 
-Run `./start_minionX.sh` on every server to start the cluster.
+Run `./start_minionX.sh` on every server to start the cluster. You will get a lot of errors untill the cluster is formed, just
+ignore the noice.
 
 ##Connect Cluster
 
@@ -66,7 +66,9 @@ A 2 node cluster! \ö/
 
 `http://yyy.yyy.yyy.yyy:45984/_membership` will show the same thing, so you only have to add a node once.
 
-Repeat until all nodes are connected.
+Repeat until all nodes are connected, then finish the cluster setup.
+
+    curl -X POST "http://server1:45984/_cluster_setup" -H "Content-Type:application/json" -d '{"action":"finish_cluster"}' --user daboss
 
 ##Shutdown
 
@@ -75,5 +77,3 @@ Ctrl+C in the shell you ran `./start_minionX.sh` to shut down a node.
 ##Start
 
 Run `./start_minionX.sh` to start a node.
-
-

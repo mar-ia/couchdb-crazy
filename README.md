@@ -2,4 +2,4 @@
 
 For the ones that can not wait for the release of CouchDB 2.0 and want to take it for a spin now.
 
-Grab your copy of the CouchDB 2.0 Developer Preview at [https://couchdb.apache.org/developer-preview/2.0/](https://couchdb.apache.org/developer-preview/2.0/)
+[The Developer Preview](https://couchdb.apache.org/developer-preview/2.0/) is old and should not be used anymore, use latest master instead.
